@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,10 @@ export class HomePage {
 
   nombreUsuario: string = "Usuario1";
 
-  constructor() {}
+  constructor(private router:Router) { }
+
+  cerrarSesion() {
+    this.router.navigate(['/login'])
+  }
 
 }

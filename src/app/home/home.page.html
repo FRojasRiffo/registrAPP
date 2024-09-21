@@ -1,10 +1,13 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <div class="centrar">
       <ion-title>
         RegistrApp
       </ion-title>
-    </div>
+
+      <ion-button (click)="cerrarSesion()" slot="end" color="warning">
+        <ion-icon name="power-outline"></ion-icon>
+      </ion-button>
+
   </ion-toolbar>
 </ion-header>
 
