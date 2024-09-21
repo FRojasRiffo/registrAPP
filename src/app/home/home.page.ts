@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  nombreUsuario: string = "Usuario1";
+
   constructor() {}
 
 }
