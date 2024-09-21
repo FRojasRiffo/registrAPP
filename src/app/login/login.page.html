@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="centrar">
+      <ion-title>
+        Inicio de sesión
+      </ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="centrar">
+
+      <br>
+
+      <ion-item>
+        <ion-label>Nombre de usuario</ion-label>
+        <input type="text" [(ngModel)]="nombreUsuario" name="nombreUsuario" required>
+      </ion-item>
+
+      <br>
+
+      <ion-item>
+        <ion-label>Nombre de usuario</ion-label>
+        <input type="password" [(ngModel)]="contrasena" name="contrasena" required>
+      </ion-item>
+
+      <br>
+
+      <ion-button type="submit">
+        Iniciar sesión
+      </ion-button>
+
+    </div>
+
+  </form>
+
+</ion-content>
