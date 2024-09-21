@@ -15,6 +15,22 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'asignaturas',
+    loadChildren: () => import('./asignaturas/asignaturas.module').then( m => m.AsignaturasPageModule)
+  },
+  {
+    path: 'asistencias',
+    loadChildren: () => import('./asistencias/asistencias.module').then( m => m.AsistenciasPageModule)
+  },
+  {
+    path: 'registrarasistencia',
+    loadChildren: () => import('./registrarasistencia/registrarasistencia.module').then( m => m.RegistrarasistenciaPageModule)
+  },
+  {
+    path: 'cambiarclave',
+    loadChildren: () => import('./cambiarclave/cambiarclave.module').then( m => m.CambiarclavePageModule)
+  },
 ];
 
 @NgModule({
