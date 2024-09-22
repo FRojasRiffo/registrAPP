@@ -10,3 +10,21 @@
 
   </ion-toolbar>
 </ion-header>
+
+<ion-content>
+
+  <div class="centrar">
+
+    <h1>Asistencias</h1>
+
+    <ion-list>
+      <ion-item *ngFor="let asistencia of asistencias">
+        <ion-label>{{ asistencia.asignatura }}</ion-label>
+        <ion-label>{{ asistencia.fecha }}</ion-label> 
+        <ion-label>{{ asistencia.presente }}</ion-label> 
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+</ion-content>
