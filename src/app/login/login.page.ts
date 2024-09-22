@@ -9,6 +9,23 @@ import { Router } from '@angular/router';
 })
 export class LoginPage {
 
+  public alertButtons = [{
+    text: 'Restablecer contraseña',
+    handler: (data: any) => {
+      if (data && data.nombreUsuario) {
+        this.enviarMensaje(data.nombreUsuario);
+      }
+    }
+  }];
+
+  public alertInputs = [
+    {
+      name: "nombreUsuario",
+      type: "text",
+      placeholder: 'Nombre de usuario',
+    }
+  ];
+
   nombreUsuario: string = "";
   contrasena: string = "";
 
@@ -42,5 +59,20 @@ export class LoginPage {
 
       await alert.present();
     }
+  }
+
+  async enviarMensaje(nombreUsuario: string) {
+    const mensaje = `Se ha enviado un correo para restablecer la contraseña del usuario ${nombreUsuario}.`;
+    await this.mostrarMensaje(mensaje);
+  }
+
+  async mostrarMensaje(mensaje: string) {
+    const alert = await this.alertController.create({
+      header: "Correo enviado",
+      message: mensaje,
+      buttons: ["Ok"]
+    });
+
+    await alert.present();
   }
 }

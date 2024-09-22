@@ -9,32 +9,47 @@
 </ion-header>
 
 <ion-content>
-  <form (ngSubmit)="onSubmit()">
+  <div class="centrar">
 
-    <div class="centrar">
+    <form (ngSubmit)="onSubmit()">
 
-      <br>
 
-      <ion-item>
-        <ion-label>Nombre de usuario</ion-label>
-        <input type="text" [(ngModel)]="nombreUsuario" name="nombreUsuario" required>
-      </ion-item>
+        <br>
 
-      <br>
+        <ion-item>
+          <ion-label>Nombre de usuario</ion-label>
+          <input type="text" [(ngModel)]="nombreUsuario" name="nombreUsuario" required>
+        </ion-item>
 
-      <ion-item>
-        <ion-label>Nombre de usuario</ion-label>
-        <input type="password" [(ngModel)]="contrasena" name="contrasena" required>
-      </ion-item>
+        <br>
 
-      <br>
+        <ion-item>
+          <ion-label>Nombre de usuario</ion-label>
+          <input type="password" [(ngModel)]="contrasena" name="contrasena" required>
+        </ion-item>
 
-      <ion-button type="submit">
-        Iniciar sesión
-      </ion-button>
+        <br>
 
-    </div>
+        <ion-button type="submit">
+          Iniciar sesión
+        </ion-button>
 
-  </form>
+        <br><br>
+
+
+    </form>
+
+    <ion-button id="present-alert" expand="block" shape="round">
+      ¿Olvidaste tu contraseña?
+    </ion-button>
+
+    <ion-alert
+      trigger="present-alert"
+      header="Introduzca su nombre de usuario"
+      [buttons]="alertButtons"
+      [inputs]="alertInputs"
+    ></ion-alert>
+
+  </div>
 
 </ion-content>
