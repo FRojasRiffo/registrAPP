@@ -17,18 +17,15 @@
 
     <h1>Asistencias</h1>
 
-    <ion-list>
-      <ion-item>
-        <ion-label>Asignatura</ion-label>
-        <ion-label>Fecha</ion-label>
-        <ion-label>Asistencia</ion-label>
-      </ion-item>
-      <ion-item *ngFor="let asistencia of asistencias">
-        <ion-label>{{ asistencia.asignatura }}</ion-label>
-        <ion-label>{{ asistencia.fecha }}</ion-label> 
-        <ion-label>{{ asistencia.presente }}</ion-label> 
-      </ion-item>
-    </ion-list>
+    <ion-accordion-group>
+      <ion-accordion *ngFor="let asistencia of asistencias" [value]="asistencia.asignatura">
+        <ion-item slot="header" color="light">
+          <ion-label>{{ asistencia.asignatura }}</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">Fecha: {{ asistencia.fecha }}</div>
+        <div class="ion-padding" slot="content">Estado: {{ asistencia.presente }}</div>
+      </ion-accordion>
+    </ion-accordion-group>
 
   </div>
 

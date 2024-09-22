@@ -10,15 +10,15 @@ export class AsistenciasPage implements OnInit {
   asistencias = [
     { asignatura: "Programación",
       fecha: "18-09-2024",
-      presente: "presente"
+      presente: "Presente"
     },
     { asignatura: "Arquitectura",
       fecha: "18-09-2024",
-      presente: "presente"
+      presente: "Presente"
     },
     { asignatura: "Portafolio",
       fecha: "18-09-2024",
-      presente: "ausente"
+      presente: "Ausente"
     },
   ]
 
