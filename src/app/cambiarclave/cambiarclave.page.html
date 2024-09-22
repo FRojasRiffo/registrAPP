@@ -1,12 +1,33 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-        Cambiar clave
+      Cambiar Clave
     </ion-title>
-
     <ion-buttons slot="end">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
-
   </ion-toolbar>
 </ion-header>
+
+<ion-content>
+  <form (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="stacked">Clave Actual</ion-label>
+      <ion-input type="password" [(ngModel)]="claveActual" name="claveActual" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Nueva Clave</ion-label>
+      <ion-input type="password" [(ngModel)]="nuevaClave" name="nuevaClave" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Confirmar Nueva Clave</ion-label>
+      <ion-input type="password" [(ngModel)]="confirmarClave" name="confirmarClave" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit">
+      Cambiar Clave
+    </ion-button>
+  </form>
+</ion-content>
