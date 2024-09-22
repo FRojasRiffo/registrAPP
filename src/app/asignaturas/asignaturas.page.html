@@ -1,12 +1,28 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-        Mis asignaturas
+      Mis asignaturas
     </ion-title>
-
     <ion-buttons slot="end">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
-
   </ion-toolbar>
 </ion-header>
+
+<ion-content>
+
+  <div class="centrar">
+
+    <h1>Asignaturas</h1>
+
+    <ion-list>
+      <ion-item *ngFor="let asignatura of asignaturas">
+        <ion-label>{{asignatura.sigla | uppercase }}</ion-label>
+        <ion-label>{{asignatura.nombre }}</ion-label> 
+        <ion-label>{{asignatura.seccion | uppercase }}</ion-label> 
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+</ion-content>
