@@ -1,55 +1,59 @@
 <ion-header>
-  <ion-toolbar>
-    <div class="centrar">
-      <ion-title>
+  <ion-toolbar color="primary">
+    <ion-title class="centrar">
+      <b>
         Inicio de sesión
-      </ion-title>
-    </div>
+      </b>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="centrar">
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col size="12" size-md="6" class="centrar">
+        <form (ngSubmit)="onSubmit()">
 
-    <form (ngSubmit)="onSubmit()">
+          <ion-item>
+            <ion-label position="floating" style="color: var(--ion-color-primary);">
+              Nombre de usuario
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="nombreUsuario" name="nombreUsuario" required>
+            </ion-input>
+            <ion-icon slot="end" name="man-outline" color="primary"></ion-icon>
+          </ion-item>
 
+          <ion-item>
+            <ion-label position="floating" style="color: var(--ion-color-primary);">
+              Contraseña
+            </ion-label>
+            <ion-input type="password" [(ngModel)]="contrasena" name="contrasena" required>
+              <ion-input-password-toggle slot="end" color="primary">
+              </ion-input-password-toggle>
+            </ion-input>
+          </ion-item>
 
-        <br>
+          <ion-button expand="block" type="submit" color="primary">
+            Iniciar sesión
+          </ion-button>
 
-        <ion-item>
-          <ion-label>Nombre de usuario</ion-label>
-          <input type="text" [(ngModel)]="nombreUsuario" name="nombreUsuario" required>
-        </ion-item>
+        </form>
 
-        <br>
-
-        <ion-item>
-          <ion-label>Nombre de usuario</ion-label>
-          <input type="password" [(ngModel)]="contrasena" name="contrasena" required>
-        </ion-item>
-
-        <br>
-
-        <ion-button type="submit">
-          Iniciar sesión
+        <ion-button id="present-alert" expand="block" fill="clear" shape="round" style="color: gold;">
+          ¿Olvidaste tu contraseña?
         </ion-button>
 
-        <br><br>
-
-
-    </form>
-
-    <ion-button id="present-alert" expand="block" shape="round">
-      ¿Olvidaste tu contraseña?
-    </ion-button>
-
-    <ion-alert
-      trigger="present-alert"
-      header="Introduzca su nombre de usuario"
-      [buttons]="alertButtons"
-      [inputs]="alertInputs"
-    ></ion-alert>
-
-  </div>
-
+        <ion-alert
+          trigger="present-alert"
+          header="Introduzca su nombre de usuario"
+          [buttons]="alertButtons"
+          [inputs]="alertInputs"
+        ></ion-alert>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+<style>
+  
+</style>

@@ -1,3 +1,12 @@
-.centrar{
-    text-align: center;
-}
+ion-label {
+    color: var(--ion-color-secondary);
+  }
+
+  ion-button[fill="clear"] {
+    color: gold;
+  }
+
+  :root {
+    --ion-color-primary: #1e90ff;
+    --ion-color-secondary: gold;
+  }

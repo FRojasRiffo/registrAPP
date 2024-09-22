@@ -2,29 +2,21 @@
   text-align: center;
 }
 
-// @-webkit-keyframes slideIn {
-//   0% {
-//     left: -100%;
-//   }
-//   100% {
-//     left: 0;
-//   }
-// }
+.header{
+  text-align: left;
+  text-indent: 10%;
+  font-size: xx-large;
+}
 
-// @-webkit-keyframes slideInSmooth {
-//   0% {
-//     -webkit-transform: translate3d(-100%,0,0);
-//   }
-//   100% {
-//     -webkit-transform: translate3d(0,0,0);
-//   }
-// }
+.blue {
+  color: black;
+}
 
-// .slide-in {
-//   -webkit-animation: slideIn ease-in 1;
-//   animation: slideIn ease-in 1;
-//   -webkit-animation-fill-mode: forwards;
-//   animation-fill-mode: forwards;
-//   -webkit-animation-duration: 750ms;
-//   animation-duration: 750ms;
-// }
+.gold {
+  color: gold;
+}
+
+:root {
+  --ion-color-primary: #3880ff; /* Default Ionic primary blue */
+  --ion-color-secondary: gold;  /* Gold for contrast */
+}
