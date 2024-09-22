@@ -16,9 +16,14 @@
     <h1>Asignaturas</h1>
 
     <ion-list>
+      <ion-item>
+        <ion-label>Nombre</ion-label>
+        <ion-label>Sigla</ion-label>
+        <ion-label>Sección</ion-label>
+      </ion-item>
       <ion-item *ngFor="let asignatura of asignaturas">
-        <ion-label>{{asignatura.sigla | uppercase }}</ion-label>
         <ion-label>{{asignatura.nombre }}</ion-label> 
+        <ion-label>{{asignatura.sigla | uppercase }}</ion-label>
         <ion-label>{{asignatura.seccion | uppercase }}</ion-label> 
       </ion-item>
     </ion-list>

@@ -18,6 +18,11 @@
     <h1>Asistencias</h1>
 
     <ion-list>
+      <ion-item>
+        <ion-label>Asignatura</ion-label>
+        <ion-label>Fecha</ion-label>
+        <ion-label>Asistencia</ion-label>
+      </ion-item>
       <ion-item *ngFor="let asistencia of asistencias">
         <ion-label>{{ asistencia.asignatura }}</ion-label>
         <ion-label>{{ asistencia.fecha }}</ion-label> 
