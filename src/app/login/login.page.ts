@@ -38,6 +38,21 @@ export class LoginPage {
   ) { }
 
   async onSubmit() {
+    if (!this.nombreUsuario && !this.contrasena) {
+      await this.mostrarAlerta('Error', 'Por favor, ingrese su nombre de usuario y contraseña.');
+      return;
+    }
+
+    if (!this.nombreUsuario) {
+      await this.mostrarAlerta('Error', 'El campo de nombre de usuario está vacío.');
+      return;
+    }
+
+    if (!this.contrasena) {
+      await this.mostrarAlerta('Error', 'El campo de contraseña está vacío.');
+      return;
+    }
+
     if (this.nombreUsuario === this.usuarioTemporal && this.contrasena === this.claveTemporal) {
       const alert = await this.alertController.create({
         header: 'Inicio de Sesión Exitoso',
@@ -51,13 +66,7 @@ export class LoginPage {
 
       await alert.present();
     } else {
-      const alert = await this.alertController.create({
-        header: 'Error',
-        message: 'Credenciales no válidas. Por favor, inténtalo de nuevo.',
-        buttons: ['Ok']
-      });
-
-      await alert.present();
+      await this.mostrarAlerta('Error', 'Credenciales no válidas. Por favor, inténtalo de nuevo.');
     }
   }
 
@@ -71,6 +80,16 @@ export class LoginPage {
       header: "Correo enviado",
       message: mensaje,
       buttons: ["Ok"]
+    });
+
+    await alert.present();
+  }
+
+  async mostrarAlerta(header: string, message: string) {
+    const alert = await this.alertController.create({
+      header: header,
+      message: message,
+      buttons: ['Ok']
     });
 
     await alert.present();
